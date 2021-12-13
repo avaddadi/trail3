@@ -5,7 +5,7 @@ global with sharing class ApexSecurityRest {
         Id recordId = RestContext.request.params.get('id');
         Contact result;
         if (recordId == null) {
-           throw new FunctionalException('Id parameter is required');
+           throw new FunctionalException('Id parameter is requires');
         }
       
           List<Contact> results = [SELECT id,  Title, Account.Name FROM Contact WHERE Id = :recordId];
